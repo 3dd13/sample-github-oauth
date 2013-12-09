@@ -1,28 +1,14 @@
-== README
+== Setup
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. copy .env.sample to .env
+2. put your github app id and app secret to .env
+3. bundle
+4. rails s
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== Github OAuth flow
+
+1. generate one authorize\_url and ask the user to click on it
+2. github will send a redirect request to user browser.
+3. callback url that runs in your user browser, which actually calls your rails controller
+4. use that code params to exchange long living access token for consecutive api call
